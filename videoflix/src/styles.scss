@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import './assets/styles/colors.scss';
+
+:root {
+    font-family: 'DM Sans', Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    color: $color-text; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+// button
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn-primary { //blue
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 12px 24px;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 18px;
+
+    &:hover, &:focus {
+        color: $color-text;
+        background-color: $color-primary-hover;
+        text-decoration: none;
+    }
+
+    &:active {
+        background-color: $color-primary-active;
+    }
+
+    &:disabled {
+        background-color: $color-primary-disabled;
+    }
+}
+
+
+.btn-secondary{ 
+    background-color: #FFFFFF;
+    color: $color-primary;
+    padding: 12px 24px;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+
+    font-size: 18px;
+
+    &:hover, &:focus {
+        color: $color-text;
+        background-color: $color-primary-hover;
+        text-decoration: none;
+    }
+
+    &:active {
+        color: $color-primary;
+    }
+
+    &:disabled {
+        background-color: $color-primary-disabled;
+    }
+}
+
+
+.btn-icon {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    &:hover, &:focus {
+        background-color: $color-primary-hover !important;
+    }
+
+    &:active {
+        background-color: $color-primary-active !important;
+    }
+
+    &:disabled {
+        background-color: $color-primary-disabled !important;
+    }
+}
+
+
+// link
+a {
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover, &:focus {
+        color: $color-primary-hover;
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $color-primary-active;
+    } 
+}
+
+.link-primary {
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23.44px;
+}
