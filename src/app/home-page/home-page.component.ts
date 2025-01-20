@@ -7,6 +7,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormService } from '../services/form/form.service';
+import { AuthService } from '../services/auth/auth.service';
 
 
 @Component({
@@ -17,5 +20,38 @@ import {
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
+  form: FormGroup;
 
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private formService: FormService,
+    private as: AuthService
+  ) {
+    this.form = this.fb.group({
+      email: ['', [Validators.email]],
+    });
+  }
+
+  /**
+   * Lifecycle hook to check for an existing access token on component initialization.
+   * Handle automatic login.
+   */
+  ngOnInit() {
+    if (this.as.getAccessToken()) {
+      this.router.navigate(['/browse']);
+    }
+  }
+
+
+  /**
+   * Handles form submission, stores email and navigates to signup page.
+   */
+  onSubmit() {
+    // store email for prefill
+    const email = this.form.get('email')?.value;
+    this.formService.setEmail(email);
+    // navigate to signup
+    this.router.navigate(['/signup']);
+  }
 }
