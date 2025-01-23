@@ -14,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BackendApiService } from '../services/backend_api/backend-api.service';
 import { FormService } from '../services/form/form.service';
 import { MessageToastService } from '../services/message_toast/message-toast.service';
+
 @Component({
   selector: 'app-reset-password-page',
   standalone: true,

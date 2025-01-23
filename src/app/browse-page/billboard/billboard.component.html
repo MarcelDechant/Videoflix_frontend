@@ -1,0 +1,30 @@
+<div class="billboard-row">
+    <div
+      class="billboard-container"
+      (mouseenter)="playVideo()"
+      (mouseleave)="stopVideo()"
+      (touchstart)="playVideo()"
+      (touchend)="stopVideo()"
+    >
+      <div class="billboard-video-info-container" #infoContainer>
+        <h1 class="billboard-title" #billboardTitle>{{ video.title }}</h1>
+        <p class="billboard-description">
+          {{ video.description }}
+        </p>
+        <button class="btn-primary btn-play" (click)="watchVideo(video.id)">
+          <img src="/assets/img/videoplayer/play_arrow.svg" alt="play" />
+          <span>Play</span>
+        </button>
+      </div>
+  
+      
+      <video
+        #target
+        class="billboard-video video-js"
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
