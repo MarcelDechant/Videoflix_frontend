@@ -34,7 +34,7 @@ export class LoginPageComponent {
    */
   constructor(
     private fb: FormBuilder,
-    // private bs: BackendApiService,
+    private bs: BackendApiService,
     private router: Router,
     private as: AuthService,
     private formService: FormService,
@@ -81,15 +81,15 @@ export class LoginPageComponent {
    * @param rememberMe - Flag indicating if the user should remain logged in.
    */
   async handleLogin(email: string, password: string, rememberMe: boolean) {
-    // try {
-    //   const response: any = await this.bs.login(email, password);
-    //   this.as.saveTokens(response['access'], response['refresh'], rememberMe);
-    //   console.log(response);
-    //   this.router.navigate(['/browse']);
-    // } catch (error: any) {
-    //   console.error(error);
-    //   this.messageToastService.setError(error.error.detail);
-    // }
+    try {
+      const response: any = await this.bs.login(email, password);
+      this.as.saveTokens(response['access'], response['refresh'], rememberMe);
+      console.log(response);
+      this.router.navigate(['/browse']);
+    } catch (error: any) {
+      console.error(error);
+      this.messageToastService.setError(error.error.detail);
+    }
   }
 
 }

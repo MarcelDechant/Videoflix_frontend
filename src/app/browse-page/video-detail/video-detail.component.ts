@@ -77,7 +77,7 @@ export class VideoDetailComponent {
       try {
         this.loaderService.start();
         const response: any = await this.contentService.getVideo(this.videoId);
-        console.log(response);
+        console.log('loadVideo',response);
         this.video = response || {};
       } catch (error: any) {
         console.error(error);

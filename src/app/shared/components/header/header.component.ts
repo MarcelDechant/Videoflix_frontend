@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-// import { AuthService } from '../../../services/auth/auth.service';
+import { AuthService } from '../../../services/auth/auth.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
   constructor(
-    // public authService: AuthService,
+    public authService: AuthService,
     private location: Location,
     private router: Router
   ) {}

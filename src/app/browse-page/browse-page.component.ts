@@ -53,8 +53,22 @@ export class BrowsePageComponent {
     try {
       this.loaderService.start();
       const response: any = await this.contentService.getGenres();
-      this.genres = response;
-      console.log(response);
+      console.log('Aktuelle Genres:', response);
+      const genresWithVideos = [];
+  
+      // Direkt aus der Antwort die Genres mit Videos filtern
+      for (const genre of response) {
+        // Wenn das `videos`-Array nicht leer ist, Genre zur Liste hinzufügen
+        if (genre.videos && genre.videos.length > 0) {
+          genresWithVideos.push(genre);
+        } else {
+          console.log(`Kein Video für Genre ${genre.name}`);
+        }
+      }
+  
+      // Nur Genres mit Videos werden angezeigt
+      this.genres = genresWithVideos;
+      console.log('Genres mit Videos:', this.genres);
     } catch (error) {
       console.error(error);
     } finally {

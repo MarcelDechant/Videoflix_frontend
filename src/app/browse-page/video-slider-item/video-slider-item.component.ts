@@ -17,6 +17,4 @@ export class VideoSliderItemComponent {
   openDetailView(id: number) {
     this.router.navigate(['/browse'], { queryParams: { vid: id } });
   }
-
-
 }

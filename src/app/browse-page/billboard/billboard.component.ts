@@ -91,6 +91,7 @@ export class BillboardComponent {
    */
   playVideo() {
     const video = this.target.nativeElement;
+    video.muted = true;
     video.play();
 
     // only play maxPlayTime in seconds
@@ -121,10 +122,12 @@ export class BillboardComponent {
     try {
       this.loaderService.start();
       const response: any = await this.contentService.getBillboardVideo();
+      console.log('Server Response:', response); 
       this.video = response;
-      console.log(response);
+
+      console.log('Video URL:', this.video.video_url); 
     } catch (error) {
-      console.error(error);
+      console.error('Fehler beim Laden des Videos:',error);
     } finally {
       this.loaderService.stop();
     }

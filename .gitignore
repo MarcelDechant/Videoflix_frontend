@@ -40,3 +40,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# test video data
+test-assets/
+videos
+captions
+subtitles
+
+# environments
+environments/

@@ -78,3 +78,29 @@ p {
     }
   }
 }
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 26.04px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 20.83px;
+  }
+
+  .sign-up-container {
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      font-size: 16px;
+    }
+  }
+}
