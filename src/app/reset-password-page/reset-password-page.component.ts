@@ -111,7 +111,6 @@ export class ResetPasswordPageComponent {
         this.uid!,
         this.token!
       );
-      console.log(response);
       this.messageToastService.setSuccess(
         'The password has been successfully reset.'
       );

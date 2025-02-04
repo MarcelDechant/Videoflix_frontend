@@ -53,7 +53,7 @@ export class BrowsePageComponent {
     try {
       this.loaderService.start();
       const response: any = await this.contentService.getGenres();
-      console.log('Aktuelle Genres:', response);
+      
       const genresWithVideos = [];
   
       // Direkt aus der Antwort die Genres mit Videos filtern
@@ -62,13 +62,13 @@ export class BrowsePageComponent {
         if (genre.videos && genre.videos.length > 0) {
           genresWithVideos.push(genre);
         } else {
-          console.log(`Kein Video für Genre ${genre.name}`);
+          // console.log(`Kein Video für Genre ${genre.name}`);
         }
       }
   
       // Nur Genres mit Videos werden angezeigt
       this.genres = genresWithVideos;
-      console.log('Genres mit Videos:', this.genres);
+      
     } catch (error) {
       console.error(error);
     } finally {

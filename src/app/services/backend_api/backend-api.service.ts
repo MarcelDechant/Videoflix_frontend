@@ -18,7 +18,6 @@ export class BackendApiService {
    * @returns {Promise<any>} A promise with the backend response.
    */
   register(email: string, password: string): Promise<any> {
-    console.log('Register-Methode aufgerufen mit:', email, password);
     const url = environment.baseURL + '/api/register/';
     const body = {
       "email" : email,
@@ -54,7 +53,6 @@ export class BackendApiService {
    * @returns {Promise<any>} A promise with the backend response.
    */
   login(email: string, password: string): Promise<any> {
-    console.log('Login-Methode aufgerufen mit:', email, password);
     const url = environment.baseURL + '/api/login/';
     const body = {
       "email" : email,

@@ -61,7 +61,6 @@ export class ForgotPasswordPageComponent {
   async handleForgotPassword(email: string) {
     try {
       const response: any = await this.bs.forgotPassword(email);
-      console.log(response);
       this.messageToastService.setSuccess(response.detail);
       this.router.navigate(['/login'])
     } catch (error: any) {

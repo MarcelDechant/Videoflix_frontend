@@ -71,7 +71,7 @@ export class BillboardComponent {
       this.target.nativeElement,
       this.options,
       function onPlayerReady() {
-        console.log('onPlayerReady', this);
+  
       }
     );
   }
@@ -122,10 +122,10 @@ export class BillboardComponent {
     try {
       this.loaderService.start();
       const response: any = await this.contentService.getBillboardVideo();
-      console.log('Server Response:', response); 
+      
       this.video = response;
 
-      console.log('Video URL:', this.video.video_url); 
+  
     } catch (error) {
       console.error('Fehler beim Laden des Videos:',error);
     } finally {

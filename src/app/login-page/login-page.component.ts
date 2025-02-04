@@ -84,7 +84,6 @@ export class LoginPageComponent {
     try {
       const response: any = await this.bs.login(email, password);
       this.as.saveTokens(response['access'], response['refresh'], rememberMe);
-      console.log(response);
       this.router.navigate(['/browse']);
     } catch (error: any) {
       console.error(error);

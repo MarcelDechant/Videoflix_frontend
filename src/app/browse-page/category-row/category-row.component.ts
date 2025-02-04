@@ -77,7 +77,6 @@ export class CategoryRowComponent {
       this.loaderService.start();
       const response: any = await this.contentService.getGenreVideos(this.genre.id, (6 * this.itemsInRow + 2), this.sliderIndex); // max. 38 videos
       this.videos = response.results;
-      console.log(response);
     } catch (error) {
       console.error(error);
     } finally {

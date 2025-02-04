@@ -19,7 +19,6 @@ export class ContentService {
     const url = environment.baseURL + '/api/genres/';
     try {
       const response = await lastValueFrom(this.http.get(url));
-      console.log('Genres abgerufen', response);
       return response;
     } catch (error) {
       console.error('Fehler beim Abrufen der Genres', error);

@@ -89,7 +89,6 @@ export class SignUpPageComponent {
    async handleRegistration(email: string, password: string) {
      try {
        const response = await this.bs.register(email, password);
-       console.log(response);
        this.messageToastService.setSuccess('Registration success. Please check your email to complete the registration.')
      } catch (error: any) {
        console.error(error);
